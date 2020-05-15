@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 import initStore from 'root/store';
 import {setDim, setText} from 'actions/appActions';
 import { syncStorage} from 'actions/storageActions';
-import Shell from 'components/Shell';
+import Layout from 'components/Layout';
 import Loader from 'components/Loader';
 import TextField from 'material-ui/TextField';
 
@@ -31,18 +31,19 @@ class App extends Component {
 
    render() {
     return (
-    <Shell>
+    <Layout>
       <Head title="Home">
       </Head>
       <Nav />
       <p>Store will persist across pages and browser refreshes!</p>
+        <p>Result will appear on "About" page</p>
       <TextField
          type="text"
          id="text-field-controlled"
-         floatingLabelText="Type a value:"
+         floatingLabelText="Enter name here:"
          value={this.props.textValue}
          onChange={this.handleChange} />
-    </Shell>
+    </Layout>
     );
    }
 }

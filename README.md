@@ -21,15 +21,12 @@ In addition, I have added setup for:
 
 ## To Install
 ```
- git clone https://github.com/Terrycoco/nextjs-redux-boilerplate.git [YOUR APP NAME]
- cd [YOUR APP NAME]
  npm install
  
 
  make it your own:
  git init
  git remote set-url origin http://github.com/[YOUR GITHUB NAME]/[YOUR GITHUB NEW REPOSITORY]
- 
 
  test it out:
  npm run dev
@@ -103,7 +100,7 @@ There is a template file in the /pages section which is all set up.  Simply copy
 
 ## Using SASS / CSS
 
-I prefer to organize my stylesheets this way:
+Prefer to organize stylesheets this way:
 
 - /styles/
   - all globally used and shared stylesheets go in here
@@ -121,7 +118,7 @@ import stylesheet from './mycomponent.scss';
 ```
 <style dangerouslySetInnerHTML={{__html: stylesheet}}></style>
 ```
-You can use @import '../someSassOrCssFile' as usual in any Sass file. (You must use relative paths though, unfortunately).  The Shell component,which is wrapped around each top-level page, has a corresponding stylesheet 'layout.scss'.  Here is where you would import any stylesheets to use globally.
+You can use @import '../someSassOrCssFile' as usual in any Sass file. (You must use relative paths though, unfortunately).  The Layout component,which is wrapped around each top-level page, has a corresponding stylesheet 'layout.scss'.  Here is where you would import any stylesheets to use globally.
 
 ## Using Material-UI
 It's all set up as Higher Order Component (hoc).  To use it add this to a page (top-level only):
@@ -154,9 +151,9 @@ Then, you can either pass your props down to child components or connect your co
 ## Persistent Storage
 The redux store persists across pages and even browser refreshes. Simply wrap each top-level page in the Shell component:
 ```
-<Shell>
+<Layout>
 ... your page stuff
-</Shell>
+</Layout>
 ```
 If you want something the user does to save to the store AND to the persistent storage, add syncStorage() to that code.  SyncStorage looks for the LATEST version of the store and makes sure the stored version and the one in the cache are the same.
 
@@ -168,7 +165,7 @@ const s = require('actions/types').storage; //put this in every reducer
 
     //updates whole store -- put in every reducer with name of reducer
     case s.SET_STORE: 
-      return action.payload.app;
+      return action.payload.app ``{app is a reducer name}``;
 
 ```
 
@@ -178,7 +175,7 @@ Any time that you want to "age" the redux store to make sure that these values w
 I don't like using relative paths if I don't have to (I hate trying to remember ../../..)!  So I set up in the .babelrc file at the root all the aliases for different folders.  If you add a folder to your project, add it in there too.
 
 ## Service Worker
-I set up a service worker at root (my-service-worker.js).
+ set up a service worker at root (my-service-worker-simple.js).
 1. Any time that you add a page, add the url to the cache of the my-service-worker.js file in the install event and change the version number.
 2. Be sure to customize the manifest.json file at the root with your project specifics, such as your project name and icons.
 

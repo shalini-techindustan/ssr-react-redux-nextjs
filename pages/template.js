@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Head from 'components/Head';
 import Nav from 'components/Nav';
 import withRedux from 'next-redux-wrapper';
 import withMui from 'components/hocs/withMui';
 import { bindActionCreators } from 'redux';
 import initStore from 'root/store';
-import Shell from 'components/Shell';
+import Layout from 'components/Layout';
 
 
 class NEWPAGE extends Component {
@@ -14,21 +14,25 @@ class NEWPAGE extends Component {
   componentWillMount() {
 
   }
-  componentDidMount()  {
+  componentDidMount() {
 
   }
 
 
   render() {
     return (
-    <Shell>
-      <Head title="NEWPAGE" />
-      <Nav />
-       Use this as a template to add new pages
+      <Layout>
+        <Head title="NEWPAGE" />
+        <Nav />
+        <div style={{width:'50%'}}>
+          Use this as a template to add new pages.
+       <p>Change "template" name with your file name, same do in routes, replace '/template' with your your route. </p>
+          <p>Note*- But route name and file should have same name otherwise component will not be rendered, As in ssr file name act as a route.</p>
 
-    </Shell>
+        </div>
+      </Layout>
     );
-   }
+  }
 }
 
 function mapStateToProps(state) {
@@ -41,4 +45,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default withRedux(initStore, mapStateToProps = null, mapDispatchToProps = null )(withMui(NEWPAGE));
+export default withRedux(initStore, mapStateToProps = null, mapDispatchToProps = null)(withMui(NEWPAGE));

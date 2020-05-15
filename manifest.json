@@ -1,7 +1,7 @@
 {
-  "short_name": "YourAppName",
-  "name": "Your Longer App Name",
-  "description": "Your app description",
+  "short_name": "Demo app",
+  "name": "React ssr demo app",
+  "description": "React ssr nextjs and redux based boilerplate",
   "background_color": "#eee",
   "display": "standalone",
   "lang": "en-US",

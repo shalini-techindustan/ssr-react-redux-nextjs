@@ -4,10 +4,10 @@ import { bindActionCreators } from 'redux';
 import registerSW from 'offline/registerSW';
 import { setDim } from 'actions/appActions';
 import { initStorage, syncStorage, ageStore } from 'actions/storageActions';
-import stylesheet from './shell.scss';
+import stylesheet from './layout.scss';
 
 
-class Shell extends Component {
+class Layout extends Component {
   getInitialProps() {
     
   }
@@ -72,4 +72,4 @@ function mapStoreToProps(store) {
   };
 }
 
-export default connect(mapStoreToProps, mapDispatchToProps)(Shell);
+export default connect(mapStoreToProps, mapDispatchToProps)(Layout);

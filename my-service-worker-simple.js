@@ -25,7 +25,8 @@ self.addEventListener("install", function(event) {
 		 	*/
 		 	return cache.addAll([
 		 		'/',
-		 		'/about'
+				 '/about',
+				 '/template'
 		 	]);
 		 })
 		 .then(function() {

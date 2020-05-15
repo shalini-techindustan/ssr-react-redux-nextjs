@@ -50,6 +50,12 @@ const Nav = () => (
         </Link>
       </li>
 
+      <li>
+        <Link href="/template" >
+          <a>Template</a>
+        </Link>
+      </li>
+
     </ul>
 
   </nav>
