@@ -27,7 +27,7 @@ class NEWPAGE extends Component {
         <div style={{width:'50%'}}>
           Use this as a template to add new pages.
        <p>Change "template" name with your file name, same do in routes, replace '/template' with your your route. </p>
-          <p>Note*- But route name and file should have same name otherwise component will not be rendered, As in ssr file name act as a route.</p>
+          <p>Note: The name of the Route and name of the Component File should be the same. Otherwise component will not be rendered, As in ssr file name act as a route.</p>
 
         </div>
       </Layout>

@@ -10,7 +10,8 @@ const links = [
 
 const Nav = () => (
   <nav>
-      <style dangerouslySetInnerHTML={{__html: `
+    <style dangerouslySetInnerHTML={{
+      __html: `
       nav {
         text-align: center;
       }
@@ -37,7 +38,7 @@ const Nav = () => (
           <a>Home</a>
         </Link>
       </li>
-     
+
       <li>
         <Link href="/about" >
           <a>About</a>

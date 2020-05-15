@@ -32,7 +32,7 @@ class About extends Component {
         {this.props.id && (
           <p>{"ID: " + this.props.id}</p>
         )}
-        <p>Here is the value: 
+        <p>Here is the value:
         {this.props.textValue}
         </p>
       </Layout>

@@ -1,6 +1,6 @@
 //service worker with sw-toolbox example
 (global => {
-  'use strict';
+	'use strict';
 
 	const DAY = 86400;
 
@@ -10,13 +10,13 @@
 	// //turn on the debug logging, visible in Developer Tools console.
 	global.toolbox.options.debug = true;
 
-  //precached urls
-  toolbox.precache([
-     'https://use.edgefonts.net/lato.js',
-     'https://use.fontawesome.com/6ba5b9b7c9.js'
-  ]);
+	//precached urls
+	toolbox.precache([
+		'https://use.edgefonts.net/lato.js',
+		'https://use.fontawesome.com/6ba5b9b7c9.js'
+	]);
 
-  	// //the route for the icons
+	// //the route for the icons
 	toolbox.router.get('/about(.*)', global.toolbox.cacheFirst, {
 		cache: {
 			name: 'about',
@@ -25,7 +25,7 @@
 			maxAgeSeconds: DAY * 7 //cache for a week
 		}
 	});
-  
+
 	// //the route for the icons
 	toolbox.router.get('/static/icons(.*)', global.toolbox.cacheFirst, {
 		cache: {
@@ -35,18 +35,18 @@
 		}
 	});
 
- // The route for any requests from the googleapis origin
-  toolbox.router.get('/(.*)', global.toolbox.cacheFirst, {
-    cache: {
-      name: 'sharewalksapi',
-      maxEntries: 10,
-      maxAgeSeconds: 86400 // cache for a day
-    },
+	// The route for any requests from the googleapis origin
+	toolbox.router.get('/(.*)', global.toolbox.cacheFirst, {
+		cache: {
+			name: 'sharewalksapi',
+			maxEntries: 10,
+			maxAgeSeconds: 86400 // cache for a day
+		},
 
-    origin: /api\.sharewalks\.com$/,
-    // Set a timeout threshold of 2 seconds
-    networkTimeoutSeconds: 2
-  });
+		origin: /api\.sharewalks\.com$/,
+		// Set a timeout threshold of 2 seconds
+		networkTimeoutSeconds: 2
+	});
 
 	// /* By default, all requests that don't match our custom handler will use the toolbox.networkFirst
 	// cache strategy, and their responses will be stored in the default cache. */

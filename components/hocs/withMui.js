@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import myTheme from 'styles/theme'
@@ -6,10 +6,10 @@ import myTheme from 'styles/theme'
 
 const muiTheme = myTheme;
 
-export default function(NextPage) {
- class outputComponent extends Component {
+export default function (NextPage) {
+  class outputComponent extends Component {
     static async getInitialProps(ctx) {
-      const {req} = ctx;
+      const { req } = ctx;
       const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
       let pageProps = {};
       if (NextPage.getInitialProps) {
@@ -25,13 +25,13 @@ export default function(NextPage) {
     render() {
       let userAgent = this.props.userAgent;
       return (
-         <MuiThemeProvider muiTheme={getMuiTheme({userAgent,  ...muiTheme})}>
-            <NextPage {...this.props} />
-         </MuiThemeProvider>
+        <MuiThemeProvider muiTheme={getMuiTheme({ userAgent, ...muiTheme })}>
+          <NextPage {...this.props} />
+        </MuiThemeProvider>
       );
     }
- }
-  
- return outputComponent;
+  }
+
+  return outputComponent;
 
 }

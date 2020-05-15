@@ -178,4 +178,3 @@ I don't like using relative paths if I don't have to (I hate trying to remember 
  set up a service worker at root (my-service-worker-simple.js).
 1. Any time that you add a page, add the url to the cache of the my-service-worker.js file in the install event and change the version number.
 2. Be sure to customize the manifest.json file at the root with your project specifics, such as your project name and icons.
-

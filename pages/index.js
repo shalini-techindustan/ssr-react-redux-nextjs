@@ -1,22 +1,22 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Head from 'components/Head';
 import Nav from 'components/Nav';
 import withRedux from 'next-redux-wrapper';
 import withMui from 'components/hocs/withMui';
 import { bindActionCreators } from 'redux';
 import initStore from 'root/store';
-import {setDim, setText} from 'actions/appActions';
-import { syncStorage} from 'actions/storageActions';
+import { setDim, setText } from 'actions/appActions';
+import { syncStorage } from 'actions/storageActions';
 import Layout from 'components/Layout';
 import Loader from 'components/Loader';
 import TextField from 'material-ui/TextField';
 
 class App extends Component {
-  getInitialProps({ store, isServer}) {
-    return {isServer}
+  getInitialProps({ store, isServer }) {
+    return { isServer }
   }
-  
-  componentDidMount()  {
+
+  componentDidMount() {
 
   }
 
@@ -29,23 +29,23 @@ class App extends Component {
     this.props.syncStorage(); //persist 
   }
 
-   render() {
+  render() {
     return (
-    <Layout>
-      <Head title="Home">
-      </Head>
-      <Nav />
-      <p>Store will persist across pages and browser refreshes!</p>
+      <Layout>
+        <Head title="Home">
+        </Head>
+        <Nav />
+        <p>Store will persist across pages and browser refreshes!</p>
         <p>Result will appear on "About" page</p>
-      <TextField
-         type="text"
-         id="text-field-controlled"
-         floatingLabelText="Enter name here:"
-         value={this.props.textValue}
-         onChange={this.handleChange} />
-    </Layout>
+        <TextField
+          type="text"
+          id="text-field-controlled"
+          floatingLabelText="Enter name here:"
+          value={this.props.textValue}
+          onChange={this.handleChange} />
+      </Layout>
     );
-   }
+  }
 }
 
 function mapStateToProps(state) {

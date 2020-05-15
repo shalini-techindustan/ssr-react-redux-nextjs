@@ -1,7 +1,7 @@
 module.exports = () => {
   return {
-    '/': { page: '/'},
-    '/about': { page: '/about'},
-    '/template': {page: '/template'}
+    '/': { page: '/' },
+    '/about': { page: '/about' },
+    '/template': { page: '/template' }
   }
 }

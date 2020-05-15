@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import registerSW from 'offline/registerSW';
 import { setDim } from 'actions/appActions';
@@ -9,12 +9,12 @@ import stylesheet from './layout.scss';
 
 class Layout extends Component {
   getInitialProps() {
-    
+
   }
   constructor(props) {
     super(props);
     this.state = {
-      isAbsolute:  props.isAbsolute | false
+      isAbsolute: props.isAbsolute | false
     };
     this.bound_onResize = this.onResize.bind(this);
   }
@@ -23,7 +23,7 @@ class Layout extends Component {
   }
 
   componentDidMount() {
-    if (process.env.NODE_ENV ==='production') {
+    if (process.env.NODE_ENV === 'production') {
       registerSW();
     }
     this.props.initStorage();
@@ -40,24 +40,24 @@ class Layout extends Component {
 
   onResize() {
     //set current dimensions in store 
-    this.props.setDim({height: window.innerHeight || document.documentElement.clientHeight, width: window.innerWidth || document.documentElement.clientWidth});
+    this.props.setDim({ height: window.innerHeight || document.documentElement.clientHeight, width: window.innerWidth || document.documentElement.clientWidth });
   }
 
   render() {
     let classname = (this.state.isAbsolute ? "PAGE-ABSOLUTE" : 'PAGE');
     return (
-    <div className="APP">
-      <style dangerouslySetInnerHTML={{__html: stylesheet}}></style>
-      <div id="page" ref="page" className={classname} style={{height: this.props.height, width: this.props.width, overflowY: 'hidden'}} >
-       {this.props.children}
+      <div className="APP">
+        <style dangerouslySetInnerHTML={{ __html: stylesheet }}></style>
+        <div id="page" ref="page" className={classname} style={{ height: this.props.height, width: this.props.width, overflowY: 'hidden' }} >
+          {this.props.children}
+        </div>
+
       </div>
-     
-    </div>
     );
   }
 }
 
-function mapDispatchToProps(dispatch)  {
+function mapDispatchToProps(dispatch) {
   return {
     setDim: bindActionCreators(setDim, dispatch),
     initStorage: bindActionCreators(initStorage, dispatch),

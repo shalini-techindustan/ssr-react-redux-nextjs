@@ -1,15 +1,18 @@
 {
   "plugins": [
     [
-     "transform-assets-import-to-string",
-     {
-       "baseDir": "static",
-       "baseUri": "/"
-     }
+      "transform-assets-import-to-string",
+      {
+        "baseDir": "static",
+        "baseUri": "/"
+      }
     ],
     [
-      "module-resolver", {
-        "root": ["."],
+      "module-resolver",
+      {
+        "root": [
+          "."
+        ],
         "alias": {
           "styles": "./styles",
           "components": "./components",
@@ -22,11 +25,15 @@
           "root": "."
         },
         "cwd": "babelrc"
-    }],
+      }
+    ],
     [
       "wrap-in-js",
       {
-        "extensions": ["css$", "scss$"]
+        "extensions": [
+          "css$",
+          "scss$"
+        ]
       }
     ]
   ],
