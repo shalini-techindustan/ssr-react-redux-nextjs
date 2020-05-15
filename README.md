@@ -1,4 +1,4 @@
-## Why another boilerplate?
+## Neaxtjs, React -redux Boileplate
 
 This project was bootstrapped with [Create Next App](https://github.com/segmentio/create-next-app).
 Out of the box, we get:
