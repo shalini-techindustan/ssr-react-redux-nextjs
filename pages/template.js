@@ -9,40 +9,40 @@ import Layout from 'components/Layout';
 
 
 class NEWPAGE extends Component {
-  static async getInitialProps() {
-  }
-  componentWillMount() {
+    static async getInitialProps() {
+    }
+    componentWillMount() {
 
-  }
-  componentDidMount() {
+    }
+    componentDidMount() {
 
-  }
+    }
 
 
-  render() {
-    return (
-      <Layout>
-        <Head title="NEWPAGE" />
-        <Nav />
-        <div style={{width:'50%'}}>
-          Use this as a template to add new pages.
-       <p>Change "template" name with your file name, same do in routes, replace '/template' with your your route. </p>
-          <p>Note: The name of the Route and name of the Component File should be the same. Otherwise component will not be rendered, As in ssr file name act as a route.</p>
+    render() {
+        return (
+            <Layout>
+                <Head title="NEWPAGE" />
+                <Nav />
+                <div style={{ width: '50%' }}>
+                    Use this as a template to add new pages.
+                    <p>Change "template" name with your file name, same do in routes, replace '/template' with your your route. </p>
+                    <p>Note: The name of the Route and name of the Component File should be the same. Otherwise component will not be rendered, As in ssr file name act as a route.</p>
 
-        </div>
-      </Layout>
-    );
-  }
+                </div>
+            </Layout>
+        );
+    }
 }
 
 function mapStateToProps(state) {
-  return {
-  };
+    return {
+    };
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-  }
+    return {
+    }
 }
 
 export default withRedux(initStore, mapStateToProps = null, mapDispatchToProps = null)(withMui(NEWPAGE));
