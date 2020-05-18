@@ -1,3 +1,3 @@
 (async () => {
-  console.log('static dir OK');
+    console.log('static dir OK');
 })();
